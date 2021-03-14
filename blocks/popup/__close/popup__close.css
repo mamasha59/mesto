@@ -12,12 +12,12 @@
 @media screen and (max-width:1023px){
 .popup__close{
     right: -25px;
-    bottom: 60px;
+    /* bottom: 60px; */
     }
 }
 @media screen and (max-width:424px){
 .popup__close{
     right: 2px;
-    bottom: 53px;
+    /* bottom: 53px; */
     }
 }
