@@ -1,0 +1,10 @@
+.profile__add-img{
+    max-height: 50px;
+    padding: 0 64px 0 64px;
+}
+@media screen and (max-width:767px){
+.profile__add-img{
+    padding: 0 134px 0 134px;
+    max-height: 16px;
+    }
+}

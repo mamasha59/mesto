@@ -1,0 +1,15 @@
+.profile__add{
+    width: 150px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    padding: 17px 0 17px 0;
+}
+.profile__add:hover{
+    opacity: 0.6;
+}
+@media screen and (max-width:767px){
+.profile__add{
+    width: 280px;
+    margin: 0 16px 0 16px;
+    }
+}
