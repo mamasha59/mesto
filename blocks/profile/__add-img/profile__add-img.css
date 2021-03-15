@@ -4,7 +4,7 @@
 }
 @media screen and (max-width:767px){
 .profile__add-img{
-    padding: 0 134px 0 134px;
+    padding: 0 130px;
     max-height: 16px;
     }
 }

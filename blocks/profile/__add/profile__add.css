@@ -1,15 +1,19 @@
 .profile__add{
+    margin: 0;
     width: 150px;
-    border: 2px solid #FFFFFF;
-    box-sizing: border-box;
-    padding: 17px 0 17px 0;
+    height: 50px;
+    background-size: contain;
+    padding: 13px 0;
+    background:url(../../../images/Add-Button.svg) no-repeat;
+    border: none;
+    outline: none;
 }
 .profile__add:hover{
     opacity: 0.6;
 }
 @media screen and (max-width:767px){
 .profile__add{
-    width: 280px;
-    margin: 0 16px 0 16px;
+    width: 282px;
+    background:url(../../../images/Add-Button-SmalScreen.svg) no-repeat;
     }
 }
