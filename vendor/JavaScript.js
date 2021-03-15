@@ -42,4 +42,14 @@ function formSubmitHandler(evt) {
     nameJob.textContent = jobInput.value;
     
 }
-formElement.addEventListener('submit', formSubmitHandler,);
+formElement.addEventListener('submit', formSubmitHandler);
+
+/////////////////////////////////////////////////////////////////
+let likeButton = document.querySelector('.card__like-button');
+function like(){
+    likeButton.classList.toggle('card__like-button_active');
+}
+likeButton.addEventListener('click', function(e){
+    like();
+})
+    
