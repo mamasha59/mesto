@@ -1,4 +1,4 @@
-.profile-block__text {
+.profile__text {
     display: flex;
     flex-direction: column;
 }

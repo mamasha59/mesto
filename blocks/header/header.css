@@ -2,6 +2,13 @@
     max-width: 880px;
     margin:0 auto;
 }
+.header::after{
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid rgba(84,84,84,0.7);
+    display: flex;
+    margin-top: 40px;
+}
 @media screen and (max-width:1277px){
 .header{
     padding: 0 19px 0 19px;

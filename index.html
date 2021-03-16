@@ -1,92 +1,96 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <link rel="stylesheet" href="pages/index.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
+    <title>Mesto</title>
 </head>
+
 <body class="body">
     <div class="page">
         <header class="header">
-            <img src="./images/logo.svg" alt="логоМестоРоссия" class="header__logo">
-            <div class="header__line"></div>
+            <div class="header__logo"></div>
         </header>
         <main class="content">
             <section class="profile">
-                <div class="profile-block">
-                    <img src="./images/image.jpg" alt="картинкаПрофиля" class="profile-block__img">
-                    <div class="profile-block__text">
-                        <div class="profile-block__title-button">
-                         <h1 id="title" class="profile-block__title">Жак-Ив Кусто</h1>
-                         <button type="button" class="profile-block__link"></button>
+                <div class="profile__block">
+                    <img src="./images/image.jpg" alt="картинкаПрофиля" class="profile__img">
+                    <div class="profile__text">
+                        <div class="profile__title-button">
+                            <h1 class="profile__title">Жак-Ив Кусто</h1>
+                            <button aria-label="редактировать" type="button" class="profile__link"></button>
                         </div>
-                        <p id="subtitle" class="profile-block__subtitle">Исследователь океана</p>   
-                    </div> 
+                        <p class="profile__subtitle">Исследователь океана</p>
+                    </div>
                 </div>
-                <button type="button" class="profile__add"></button>
+                <button aria-label="добавить" type="button" class="profile__add"></button>
             </section>
             <section class="elements">
                 <div class="card">
                     <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="городКарачаевск" class="card__img">
                     <div class="card__interactive">
-                        <p class="card__title">Карачаевск</p>
-                        <button type="button" class="card__like-button"></button>
+                        <h2 class="card__title">Карачаевск</h2>
+                        <button aria-label="лайк" type="button" class="card__like-button"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="гораЭльбрус" class="card__img">
                     <div class="card__interactive">
-                        <p class="card__title">Гора Эльбрус</p>
-                        <button type="button" class="card__like-button"></button>
+                        <h2 class="card__title">Гора Эльбрус</h2>
+                        <button aria-label="лайк" type="button" class="card__like-button"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="гораДомбай" class="card__img">
                     <div class="card__interactive">
-                        <p class="card__title">Домбай</p>
-                        <button type="button" class="card__like-button"></button>
+                        <h2 class="card__title">Домбай</h2>
+                        <button aria-label="лайк" type="button" class="card__like-button"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="гораЭльбрус" class="card__img">
                     <div class="card__interactive">
-                        <p class="card__title">Гора Эльбрус</p>
-                        <button type="button" class="card__like-button"></button> 
+                        <h2 class="card__title">Гора Эльбрус</h2>
+                        <button aria-label="лайк" type="button" class="card__like-button"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="горыДомбай" class="card__img">
                     <div class="card__interactive">
-                        <p class="card__title">Домбай</p>
-                        <button type="button" class="card__like-button"></button> 
+                        <h2 class="card__title">Домбай</h2>
+                        <button aria-label="лайк" type="button" class="card__like-button"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="городКарачаево" class="card__img">
                     <div class="card__interactive">
-                        <p class="card__title">Карачаево-Чeркессия</p>
-                        <button type="button" class="card__like-button"></button>
+                        <h2 class="card__title">Карачаево-Чeркессия</h2>
+                        <button aria-label="лайк" type="button" class="card__like-button"></button>
                     </div>
-                </div>
-            </section>
-            <section class="popup">
-                <div class="popup__container">
-                        <h3 class="popup__title">Редактировать профиль</h3>
-                        <button type="button" class="popup__close"> <!--<img src="./images/Close-Icon.svg" alt="крестикЗакрыть" class="popup__close-img">-->  </button> 
-                        <form class="popup__forms">
-                            <input class="popup__name" type="text" placeholder="имя">
-                            <input class="popup__text" type="text" placeholder="профессия">
-                            <button type="submit" class="popup__button">Сохранить</button>
-                        </form>
                 </div>
             </section>
         </main>
         <footer class="footer">
             <p class="footer__copyrigth">© 2020 Mesto Russia</p>
         </footer>
+        <div class="popup">
+            <div class="popup__container">
+                <h3 class="popup__title">Редактировать профиль</h3>
+                <button aria-label="закрыть" type="button" class="popup__close">
+                    <!--<img src="./images/Close-Icon.svg" alt="крестикЗакрыть" class="popup__close-img">-->
+                </button>
+                <form method="POST" name="popup" class="popup__forms">
+                    <input name="name" class="popup__name" type="text" placeholder="Имя">
+                    <input name="about" class="popup__text" type="text" placeholder="О себе">
+                    <button aria-label="сохранить" type="submit" class="popup__button">Сохранить</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <script src="./vendor/JavaScript.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
+
 </html>
