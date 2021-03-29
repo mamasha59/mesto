@@ -7,6 +7,7 @@
 @import url(../blocks/card/__title/card__title.css);
 @import url(../blocks/card/__like-button/card__like-button.css);
 @import url(../blocks/card/__like-button/_active/card__like-button_active.css);
+@import url(../blocks/card/__deleate/card__deleate.css);
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
@@ -34,78 +35,10 @@
 @import url(../blocks/popup/__text/popup__text.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
-.card__deleate{
-    position: absolute;
-    top: 18px;
-    right: 15px;
-    background:url(../images/Trash.svg) no-repeat;
-    width: 18px;
-    height: 19px;
-    border: none;
-    cursor: pointer;
-    outline: none;
-}
-.card__deleate:hover{
-    opacity: 0.6;
-}
-.card__img-open {
-position: fixed;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0,0,0,0.9);
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 0;
-padding: 0;
-visibility: hidden;
-opacity: 0;
-transition: visibility 0.5s, opacity 0.5s linear 0s;
-}
-.cards__img_full{
-visibility: visible;
-opacity: 1;
-}
-.card__img__container{
-position: relative;
-}
-.card__img-close {
-position: absolute;
-top: -35px;
-right: -35px;
-background:url(../images/Close-Icon.svg) no-repeat;
-width: 32px;
-height: 32px;
-border: none;
-outline: none;
-margin: 0;
-padding: 0;
-cursor: pointer;
-}
-.card__img-close:hover{
-    opacity: 0.8;
-}
-@media screen and (max-width:424px){
-    .card__img-close{
-right: -3px;
-width: 30px;
-height: 30px;
-background:url(../images/Close-IconSmalScreen.svg) no-repeat;
-}
-}
 
-.card__img-screen {
-max-width: 75vw;
-max-height: 75vh;
-    
-}
-.card__img-name {
-font-family: Inter;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 15px;
-color: #FFFFFF;
-}
+@import url(../blocks/card-open/__close/card-open__close.css);
+@import url(../blocks/card-open/__container/card-open__container.css);
+@import url(../blocks/card-open/__name/card-open__name.css);
+@import url(../blocks/card-open/__screen/card-open__screen.css);
+@import url(../blocks/card-open/card-open.css);
+@import url(../blocks/card-open/_full/card-open_full.css);
