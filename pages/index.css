@@ -48,9 +48,6 @@
 .card__deleate:hover{
     opacity: 0.6;
 }
-
-
-
 .card__img-open {
 position: fixed;
 left: 0;
@@ -65,7 +62,7 @@ margin: 0;
 padding: 0;
 visibility: hidden;
 opacity: 0;
-transition: visibility 0.5s, opacity 0.5s linear;
+transition: visibility 0.5s, opacity 0.5s linear 0s;
 }
 .cards__img_full{
 visibility: visible;
