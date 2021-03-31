@@ -11,7 +11,6 @@ let popupPlace = document.querySelector('.popup_new-place'); //-- перемен
 let closePlacePopupBtn = popupPlace.querySelector('.popup__close');//--переменная попапа Добавить место
 const card = document.querySelector('#popup-place').content; //--переменная содержимое Template
 const profile = document.querySelector('.elements');
-
 const pageFull = document.querySelector('.popup_image');
 let imgScreenFull = pageFull.querySelector('.card-open__screen');
 let imgScreenFullName = pageFull.querySelector('.card-open__name');
@@ -47,6 +46,7 @@ const initialCards = [
 
 function openButtonPlace() {                  //ФУНКЦИЯ ОТКРЫТЫЕ ПОПАПА
   popupPlace.classList.add('popup_opened');
+  
 }
 function closeButtonNewPlace() {                 //ФУНКЦИЯ ЗАКРЫТИЕ ПОПАПА
   popupPlace.classList.remove('popup_opened');
@@ -56,6 +56,7 @@ function openButton() {                    //ФУНКЦИЯ ОТКРЫТИЕ П�
   popupEditProfile.classList.add('popup_opened');
   nameInput.value = nameTitle.textContent;
   jobInput.value = nameJob.textContent;
+
 }
 function closeButton() {                   //ФУНКЦИЯ ЗАКРЫТИЕ ПОПАПА
   popupEditProfile.classList.remove('popup_opened');
@@ -103,8 +104,12 @@ function forCreateCards(evt){  //---загрузка карточек через
   const link = popupPlace.querySelector('.popup__input_card-link').value;
   createCard(name,link);
   closeButtonNewPlace()
+  resetButton()
 }
-
+function resetButton(){
+  const inputStringName = popupPlace.querySelector('#ressetformName').value="";
+  const inputStringLink = popupPlace.querySelector('#ressetformLink').value="";
+}
 //--слушатели события
 formElement.addEventListener('submit', formSubmitHandler);
 createButton.addEventListener('click', openButton);
