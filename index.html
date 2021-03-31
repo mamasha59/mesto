@@ -34,14 +34,14 @@
         <footer class="footer">
             <p class="footer__copyrigth">© 2020 Mesto Russia</p>
         </footer>
-        <div class="popup">
+        <div class="popup popup_edit-profile">
             <div class="popup__container">
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <button aria-label="закрыть" type="button" class="popup__close">
                 </button>
                 <form method="POST" name="popup" class="popup__forms">
-                    <input name="name" class="popup__name" type="text" placeholder="Имя">
-                    <input name="about" class="popup__text" type="text" placeholder="О себе">
+                    <input name="name" class="popup__name popup__input_user-name" type="text" placeholder="Имя">
+                    <input name="about" class="popup__text popup__input_user-profession" type="text" placeholder="О себе">
                     <button aria-label="сохранить" type="submit" class="popup__button">Сохранить</button>
                 </form>
             </div>
@@ -52,15 +52,15 @@
                 <button aria-label="закрыть" type="button" class="popup__close">
                 </button>
                 <form method="POST" name="popup" class="popup__forms">
-                    <input name="name" class="popup__name" type="text" placeholder="Название">
-                    <input name="link" class="popup__text" type="text" placeholder="Ссылка на картинку">
+                    <input name="name" class="popup__name popup__input_card-name" type="text" placeholder="Название">
+                    <input name="link" class="popup__text popup__input_card-link" type="text" placeholder="Ссылка на картинку">
                     <button aria-label="создать" type="submit" class="popup__button">Создать</button>
                 </form>
             </div>
         </div>
-        <figure class="card-open">
-            <div class="card-open__container">
-                <button aria-label="закрыть просмотр" type="button" class="card-open__close"></button>
+        <figure class="popup popup_image">
+            <div class="card-open">
+                <button aria-label="закрыть просмотр" type="button" class="popup__close"></button>
                 <img src="##" alt="просмотр изображения во весь экран" class="card-open__screen">
                 <figcaption class="card-open__name"></figcaption>
             </div>

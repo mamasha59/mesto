@@ -1,22 +1,21 @@
-let popup = document.querySelector('.popup');
+let popupEditProfile = document.querySelector('.popup_edit-profile');
 let createButton = document.querySelector('.profile__link');
-let buttonClose = document.querySelector('.popup__close');
+let closeEditProfilePopupBtn = document.querySelector('.popup__close');
 let nameTitle = document.querySelector('.profile__title');
 let nameJob = document.querySelector('.profile__subtitle');
-let nameInput = document.querySelector('.popup__name');
-let jobInput = document.querySelector('.popup__text');
+let nameInput = document.querySelector('.popup__input_user-name');
+let jobInput = document.querySelector('.popup__input_user-profession');
 let formElement = document.querySelector('.popup__forms');
 let buttonAdd = document.querySelector('.profile__add'); //-- переменная кнопки Добавить
 let popupPlace = document.querySelector('.popup_new-place'); //-- переменная попапа Добавить место
-let popupPlaceCloseB = popupPlace.querySelector('.popup__close');//--переменная попапа Добавить место
-const card = document.querySelector('#popup-place').content.querySelector('.card'); //--переменная содержимое Template
+let closePlacePopupBtn = popupPlace.querySelector('.popup__close');//--переменная попапа Добавить место
+const card = document.querySelector('#popup-place').content; //--переменная содержимое Template
 const profile = document.querySelector('.elements');
-let nameInputPlace = popupPlace.querySelector('.popup__name'); //---попап инпут
-let nameInputText = popupPlace.querySelector('.popup__text');//---попап инпут
-const pageFull = document.querySelector('.card-open');
-let imgCreen = pageFull.querySelector('.card-open__screen');
-let figureName = pageFull.querySelector('.card-open__name');
-let figureCloseButton = pageFull.querySelector('.card-open__close')
+
+const pageFull = document.querySelector('.popup_image');
+let imgScreenFull = pageFull.querySelector('.card-open__screen');
+let imgScreenFullName = pageFull.querySelector('.card-open__name');
+let figureCloseButton = pageFull.querySelector('.popup__close')
 let formElementPlace = popupPlace.querySelector('.popup__forms');
 const initialCards = [
   {
@@ -36,14 +35,16 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
   },
   {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+   
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
   }
 ];
+
 function openButtonPlace() {                  //ФУНКЦИЯ ОТКРЫТЫЕ ПОПАПА
   popupPlace.classList.add('popup_opened');
 }
@@ -52,12 +53,12 @@ function closeButtonNewPlace() {                 //ФУНКЦИЯ ЗАКРЫТИ
 }
 //-------------------------------------------------------------------------------K
 function openButton() {                    //ФУНКЦИЯ ОТКРЫТИЕ ПОПАПА
-  popup.classList.add('popup_opened');
+  popupEditProfile.classList.add('popup_opened');
   nameInput.value = nameTitle.textContent;
   jobInput.value = nameJob.textContent;
 }
 function closeButton() {                   //ФУНКЦИЯ ЗАКРЫТИЕ ПОПАПА
-  popup.classList.remove('popup_opened');
+  popupEditProfile.classList.remove('popup_opened');
 }
 function formSubmitHandler(evt) {  //ФУНККЦИЯ ПОПАП ОКНО РЕДАКТИРОВАНИЯ имя - профессия
   evt.preventDefault();
@@ -65,67 +66,49 @@ function formSubmitHandler(evt) {  //ФУНККЦИЯ ПОПАП ОКНО РЕД
   nameJob.textContent = jobInput.value;
   closeButton();
 }
-function forCreateCards(evt) {  //-------------------------- СОЗДАНИЕ КАРТОЧКИ ЧЕРЕЗ ПОПАП
-  evt.preventDefault();
-  const container = card.cloneNode(true);
-  let cardsTitle = container.querySelector('.card__title');
-  let cardsImage = container.querySelector('.card__img');
-  profile.prepend(container);
-  cardsTitle.textContent = nameInputPlace.value;
-  cardsImage.src = nameInputText.value;
-  const deleateButton = document.querySelector('.card__deleate')//-----УДАЛЕНИЕ КАРТОЧКИ
-  deleateButton.addEventListener('click', (evnt) => { container.remove() })//-----УДАЛЕНИЕ КАРТОЧКИ
-  function openFull(e) { //----ПРОСМОТР ИЗОБРАЖЕНИЯ
-    imgCreen.src = nameInputText.value;
-    figureName.textContent = nameInputPlace.value;
-    figureCloseButton.addEventListener('click', function () {//--- ЗАКРЫТИЕ ЗУМА
-      pageFull.classList.remove('card-open_full')
-    })
-  }
-    cardsImage.addEventListener('click', function () { //--- ОТКРЫТИЕ ЗУМА
-      pageFull.classList.add('card-open_full')
-    })
-  cardsImage.addEventListener('click', openFull); //-------------------------R
-  closeButtonNewPlace(evt);//------ЗАКРЫТИЕ ПОПАПА
-  buttonLike();//----ФУНКЦИЯ ЛАЙК  
+
+function createCard(name,link) { //-----ОБЩАЯ ФУНКЦИЯ создания карточки
+const container = card.querySelector('.card').cloneNode(true);
+const cardsTitle = container.querySelector('.card__title');
+const cardsImage = container.querySelector('.card__img');
+let item ={
+name: name,
+link: link,
 }
-function buttonLike() { //-------------------ЛАЙК ПЕРЕКЛЮЧЕНИЕ
-  document.querySelector('.card__like-button').addEventListener('click', function (evt) {
-    evt.target.classList.toggle('card__like-button_active');
-  })
-}
-//------------------------ ЗАГРУЗКА КАРТОЧЕК НА СТРАНИЦУ
-initialCards.forEach(function (name) {
-  const container = card.cloneNode(true);
-  let cardsTitle = container.querySelector('.card__title');
-  let cardsImage = container.querySelector('.card__img');
-  profile.prepend(container);
-  cardsTitle.textContent = name.name;
-  cardsImage.src = name.link;
-  const deleateButton = document.querySelector('.card__deleate')//-----УДАЛЕНИЕ КАРТОЧКИ
-  deleateButton.addEventListener('click', (evnt) => { container.remove() })//-----УДАЛЕНИЕ КАРТОЧКИ    
-  buttonLike()//----ФУНКЦИЯ ЛАЙК
-  function openFull(e) { //----ПРОСМОТР ИЗОБРАЖЕНИЯ
-    imgCreen.src = name.link;
-    figureName.textContent = name.name;
-    figureCloseButton.addEventListener('click', function () {//--- ЗАКРЫТИЕ ЗУМА
-      pageFull.classList.remove('card-open_full')
-    })
-  }
-   cardsImage.addEventListener('click', function () { //--- ОТКРЫТИЕ ЗУМА
-      pageFull.classList.add('card-open_full')
-    })
-  cardsImage.addEventListener('click', openFull);
+const deleateButton = container.querySelector('.card__deleate')//-----КНОПКА УДАЛЕНИЯ КАТОЧКИ
+deleateButton.addEventListener('click', () => { container.remove() })//-----УДАЛЕНИЕ КАРТОЧКИ 
+cardsImage.addEventListener('click', function () { //--- ОТКРЫТИЕ ЗУМА
+  pageFull.classList.add('card-open_full');
+  imgScreenFull.src = link;
+  imgScreenFullName.textContent = name;
 })
-//------------------------- ЗАГРУЗКА КАРТОЧЕК НА СТРАНИЦУ
+figureCloseButton.addEventListener('click', function () {//--- ЗАКРЫТИЕ ЗУМА
+  pageFull.classList.remove('card-open_full');
+})
+cardsTitle.textContent = item.name;
+cardsImage.src = item.link;
+container.querySelector('.card__like-button').addEventListener('click', function (evt) { //----лайк кнопка
+evt.target.classList.toggle('card__like-button_active');
+})
+profile.prepend(container);
+return container;
+}
+
+initialCards.forEach(function(name){   //---загрузка карточек через массив---\\
+  createCard(name.name,name.link)
+})
+function forCreateCards(evt){  //---загрузка карточек через попап---\\
+  evt.preventDefault();
+  const name = popupPlace.querySelector('.popup__input_card-name').value;
+  const link = popupPlace.querySelector('.popup__input_card-link').value;
+  createCard(name,link);
+  closeButtonNewPlace()
+}
+
 //--слушатели события
 formElement.addEventListener('submit', formSubmitHandler);
 createButton.addEventListener('click', openButton);
-buttonClose.addEventListener('click', closeButton);
+closeEditProfilePopupBtn.addEventListener('click', closeButton);
 buttonAdd.addEventListener('click', openButtonPlace); // НОВОЕ МЕСТО
-popupPlaceCloseB.addEventListener('click', closeButtonNewPlace);// НОВОЕ МЕСТО
+closePlacePopupBtn.addEventListener('click', closeButtonNewPlace);// НОВОЕ МЕСТО
 formElementPlace.addEventListener('submit', forCreateCards); //--попап form submit создание карточки
-//-------------------------------------------------------------------------------слушатели события
-
-
-
