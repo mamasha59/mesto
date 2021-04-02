@@ -51,7 +51,7 @@
                 <h3 class="popup__title">Новое место</h3>
                 <button aria-label="закрыть" type="button" class="popup__close">
                 </button>
-                <form method="POST" name="popup" class="popup__forms">
+                <form method="POST" name="popup" id="reset" class="popup__forms">
                     <input name="name" id="ressetformName" class="popup__input popup__input_card-name" type="text" placeholder="Название">
                     <input name="link" id="ressetformLink" class="popup__input popup__input_card-link" type="text" placeholder="Ссылка на картинку">
                     <button aria-label="создать" type="submit" class="popup__button">Создать</button>
@@ -61,14 +61,14 @@
         <figure class="popup popup_image">
             <div class="card-open">
                 <button aria-label="закрыть просмотр" type="button" class="popup__close"></button>
-                <img src="##" alt="просмотр изображения во весь экран" class="card-open__screen">
+                <img src="##" alt='' class="card-open__screen">
                 <figcaption class="card-open__name"></figcaption>
             </div>
         </figure>
     </div>
     <template id="popup-place">
         <div class="card">
-            <img src="##" alt="Карточка с картинкой" class="card__img">
+            <img src="##" alt='' class="card__img">
             <button aria-label="удалить" type="button" class="card__deleate"></button>
             <div class="card__interactive">
                 <h2 class="card__title"></h2>
