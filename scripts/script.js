@@ -112,7 +112,7 @@ function clearAddCardPopupInputs(){ //----очищение формы попап
 }
 //--слушатели события
 figureCloseButton.addEventListener('click', function () {//--- ЗАКРЫТИЕ ЗУМА
-  pageFull.classList.remove('popup_opened');
+  closePopup(pageFull);
 })
 editProfileForm.addEventListener('submit', formSubmitHandler);
 formElementPlace.addEventListener('submit', submitAddCardPopup); //--попап form submit создание карточки
