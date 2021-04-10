@@ -7,10 +7,11 @@
     color: #FFFFFF;
     background: #000000;
     padding: 14px 125px;
-    margin: 47px auto 0 auto;
+    margin: 20px auto 0 auto;
     border: none;
     cursor: pointer;
     border-radius: 2px;
+    border: 1px solid  #000000;
 }
 .popup__button:hover{
     opacity: 0.8;
@@ -19,7 +20,7 @@
 .popup__button {
     width: 238px;
     padding: 14px 82px;
-    margin-top: 59px;
+    margin-top: 20px;
     font-size: 14px;
     line-height: 17px;
     }

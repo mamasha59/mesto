@@ -1,4 +1,5 @@
 const popup = document.querySelector('.popup');
+
 const popupEditProfile = document.querySelector('.popup_edit-profile');
 
 const nameTitle = document.querySelector('.profile__title');
@@ -52,11 +53,30 @@ const initialCards = [
 ];
 function openPopup(elem) {                    //ФУНКЦИЯ ОТКРЫТИЕ ПОПАПА
   elem.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopUpEsc);
 }
 function closePopup(elem) {                   //ФУНКЦИЯ ЗАКРЫТИЕ ПОПАПА
   elem.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopUpEsc);
 }
 
+function closePopUpEsc(evt) { //-----закрытие по ESC
+  const activePopUp = document.querySelector('.popup_opened');
+  if (evt.key === 'Escape') {
+    closePopup(activePopUp);
+  }
+}
+function closePopupOverlay() {        //---закрытие по клику вне попапа
+  const popupForm = Array.from(document.querySelectorAll('.popup__container'));
+  popupForm.forEach(function (evt) {
+    document.addEventListener('click', (evt) => {
+      if(evt.target.classList.contains('popup_opened')) {
+        closePopup(evt.target);
+      }
+    });
+  });
+}
+closePopupOverlay();
 function formSubmitHandler(evt) {  //ФУНККЦИЯ ПОПАП ОКНО РЕДАКТИРОВАНИЯ имя - профессия
   evt.preventDefault();
   nameTitle.textContent = nameInput.value;
@@ -120,6 +140,7 @@ createButton.addEventListener('click', function () { //--- открытие по
   openPopup(popupEditProfile);
   nameInput.value = nameTitle.textContent;
   jobInput.value = nameJob.textContent;
+
 });
 closePopupButton.addEventListener('click', function () { //--- закрытие попапа имя-профессия
   closePopup(popupEditProfile);
