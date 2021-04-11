@@ -1,4 +1,4 @@
-const popup = document.querySelector('.popup');
+const popupTest = document.querySelector('.popup');
 
 const popupEditProfile = document.querySelector('.popup_edit-profile');
 
@@ -67,11 +67,11 @@ function closePopUpEsc(evt) { //-----закрытие по ESC
   }
 }
 function closePopupOverlay() {        //---закрытие по клику вне попапа
-  const popupForm = Array.from(document.querySelectorAll('.popup__container'));
-  popupForm.forEach(function (evt) {
-    document.addEventListener('click', (evt) => {
-      if(evt.target.classList.contains('popup_opened')) {
-        closePopup(evt.target);
+  const popupForm = Array.from(document.querySelectorAll('.popup'));
+  popupForm.forEach(function (popup) {
+    popup.addEventListener('click', (event) => { 
+      if(event.target.classList.contains('popup_opened')) { 
+        closePopup(event.target); 
       }
     });
   });
