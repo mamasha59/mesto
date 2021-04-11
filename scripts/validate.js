@@ -27,7 +27,7 @@ const toggleButtonState = (inputList, buttonElement, settings) => { //--- мен
     } else {
         // кнопка активна
         buttonElement.classList.remove(settings.inactiveButtonClass);
-        buttonElement.removeAttribute('disabled', true)
+        buttonElement.removeAttribute('disabled')
     }
 }
 
