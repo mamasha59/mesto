@@ -39,16 +39,16 @@
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <button aria-label="закрыть" type="button" class="popup__close">
                 </button>
-                <form method="POST" name="popup-name" class="popup__forms" novalidate autocomplete="off">
+                <form method="POST" name="popup-profile" class="popup__forms" novalidate autocomplete="off">
                     <div class="popup__section">
-                        <input name="name" id="name-input" class="popup__input popup__input_user-name" type="text"
+                        <input name="name" id="popup__name" class="popup__input popup__input_user-name" type="text"
                             placeholder="Имя" required maxlength="40" minlength="2">
-                        <span class="popup__error name-input-error"></span>
+                        <span class="popup__error popup__name-error"></span>
                     </div>
                     <div class="popup__section">
-                        <input name="about" id='about-input' class="popup__input popup__input_user-profession"
+                        <input name="about" id='popup__about' class="popup__input popup__input_user-profession"
                             type="text" placeholder="О себе" required maxlength="200" minlength="2">
-                        <span class="popup__error about-input-error"></span>
+                        <span class="popup__error popup__about-error"></span>
                     </div>
                     <button aria-label="сохранить" type="submit" class="popup__button">Сохранить</button>
                 </form>
@@ -61,14 +61,14 @@
                 </button>
                 <form method="POST" name="popup-place" id="reset" class="popup__forms" novalidate>
                     <div class="popup__section">
-                        <input name="name-place" id="card__name" class="popup__input popup__input_card-name" type="text"
+                        <input name="name-place" id="popup-card__name" class="popup__input popup__input_card-name" type="text"
                             placeholder="Название" required maxlength="30" minlength="2">
-                        <span class="popup__error card__name-error"></span>
+                        <span class="popup__error popup-card__name-error"></span>
                     </div>
                     <div class="popup__section">
-                        <input name="link-place" id="card__link" class="popup__input popup__input_card-link" type="url"
+                        <input name="link-place" id="popup-card__link" class="popup__input popup__input_card-link" type="url"
                             placeholder="Ссылка на картинку" required>
-                        <span class="popup__error card__link-error"></span>
+                        <span class="popup__error popup-card__link-error"></span>
                     </div>
                     <button aria-label="создать" type="submit" class="popup__button">Создать</button>
                 </form>

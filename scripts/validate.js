@@ -15,7 +15,7 @@ const hideInputError = (formElement, inputElement,settings) => {
 
 const hasInvalidInput = (inputList) => { //---проверка валидации
     return inputList.some((inputElement) => {
-        return !inputElement.validity.valid;
+    return !inputElement.validity.valid;    
     })
 }
 //--------------------------
@@ -34,16 +34,15 @@ const toggleButtonState = (inputList, buttonElement, settings) => { //--- мен
 //--------------------------
 const isValid = (formElement, inputElement, settings) => {  //-----проверка на валидность
     if (!inputElement.validity.valid) {
-       showInputError(formElement, inputElement, inputElement.validationMessage,settings)
+       showInputError(formElement, inputElement, inputElement.validationMessage,settings);
     } else {
-       hideInputError(formElement, inputElement, settings);  ;
+       hideInputError(formElement, inputElement, settings);
     }
 }
 //------------------------------------------------------
 const setEventListeners = (formElement, settings) => {  //---- слушатель для всех инпутов
     const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector));
     const buttonElement = formElement.querySelector(settings.submitButtonSelector);
-
     toggleButtonState(inputList, buttonElement, settings);
 
     inputList.forEach((inputElement) => {
@@ -51,13 +50,15 @@ const setEventListeners = (formElement, settings) => {  //---- слушател�
             isValid(formElement, inputElement,settings)
             toggleButtonState(inputList, buttonElement, settings);
         })
-    })
+    })  
 }
+
 //----------------------------------
 const enableValidation = (settings) => {// Функция принимает массив полей
     const formList = Array.from(document.querySelectorAll(settings.formSelector));
     formList.forEach((formElement) => {
         setEventListeners(formElement, settings);
+        
     })
 }
 enableValidation({
