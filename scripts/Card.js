@@ -1,41 +1,38 @@
-import closePopUpEsc from './index.js';
-
+import { openPopup } from './index.js'
+// import {openPopup} from './index.js'
+const cardsImage = document.querySelector(".card__img");
 export default class Card {
   constructor(data, cardSelector) {
     this._image = data.link;
     this._title = data.name;
     this._cardSelector = cardSelector;
+    this._openPopup = () => { //---- открытие попапа - просмотр изображения
+      openPopup(pageFull) //--- сама функция открытие попапа изображения
+      this._handleOpenPopup();  
+    }
   }
-  _getTemplate() {
+  _getTemplate() { //--шаблон карточки
     const cardElement = document.querySelector(this._cardSelector).content.querySelector('.card').cloneNode(true);
     return cardElement;
   }
-  generateCard() {
+  generateCard() {  //--- возвращение полноценной рабочей карточки со слушетялми и наполнением
     this._element = this._getTemplate();
     this._setEventListeners();
     this._setCardLikeListener();
     this._setDeleteCardListener();
     this._element.querySelector('.card__img').src = this._image;
     this._element.querySelector('.card__title').textContent = this._title;
+    this._element.querySelector('.card__img').alt = this._title;
     return this._element;
   }
-  _handleOpenPopup() {
+  _handleOpenPopup() { //-- наполнение попапа - просмотр изображения
     imgScreenFull.src = this._image;
     imgScreenFullName.textContent = this._title;
     imgScreenFull.alt = this._title;
-    pageFull.classList.add('popup_opened');
-    document.addEventListener("keydown", closePopUpEsc)
   }
-  _handleClosePopup() {
-    pageFull.classList.remove('popup_opened');
-    document.removeEventListener("keydown", closePopUpEsc)
-  }
-  _setEventListeners() {
+  _setEventListeners() { //---- слушатель и открытие попапа кликом на изображение
     this._element.querySelector('.card__img').addEventListener('click', () => {
-      this._handleOpenPopup() // откройте попап
-    });
-    figureCloseButton.addEventListener('click', () => {
-      this._handleClosePopup() // закройте попап
+      this._openPopup() // откройте попап
     });
   }
   _setCardLikeListener() {
@@ -45,12 +42,11 @@ export default class Card {
         evt.target.classList.toggle("card__like-button_active");
       });
   }
-
   _setDeleteCardListener() {
     //-----КНОПКА УДАЛЕНИЯ КАРТОЧКИ
     const deleateButton = this._element.querySelector(".card__deleate");
     deleateButton.addEventListener("click", () => {
       this._element.remove();
-    }); //-----УДАЛЕНИЕ КАРТОЧКИ
+    });
   }
 }
