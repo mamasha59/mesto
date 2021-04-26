@@ -1,6 +1,6 @@
 import Card from './Card.js';
 import FormValidator from './FormValidator.js'
-import closePopUpEsc from './utils.js'
+import {closePopup,openPopup} from './utils.js'
 
 function closePopupOverlay() {        //---закрытие по клику на оверлей
     const popupForm = Array.from(document.querySelectorAll('.popup'));
@@ -13,18 +13,6 @@ function closePopupOverlay() {        //---закрытие по клику на
     });
 }
 closePopupOverlay();
-
-export function openPopup(elem) {
-    //ФУНКЦИЯ ОТКРЫТИЕ ПОПАПА
-    elem.classList.add("popup_opened");
-    document.addEventListener("keydown", closePopUpEsc);
-}
-export function closePopup(elem) {
-    //ФУНКЦИЯ ЗАКРЫТИЕ ПОПАПА
-    elem.classList.remove("popup_opened");
-    document.removeEventListener("keydown", closePopUpEsc);
-}
-
 function submitAddCardPopup(evt) {
     //---создание карточек через попап---\\
     evt.preventDefault();
@@ -89,7 +77,7 @@ formElementPlace.addEventListener("submit", submitAddCardPopup); //--попап 
 figureCloseButton.addEventListener('click', () => {// закрытие  попапа просмотра изображения
     closePopup(pageFull) 
 });
-const enableValidation = {
+const validationConfig = {
     formSelector: ".popup__forms",
     inputSelector: ".popup__input",
     submitButtonSelector: ".popup__button",
@@ -98,8 +86,8 @@ const enableValidation = {
     errorClass: "popup__error_visible",
 };
 //подключим валидацию профиля, создаем новый экземпляр класса FromValidator
-const editFormValidation = new FormValidator(enableValidation, editProfileForm);
+const editFormValidation = new FormValidator(validationConfig, editProfileForm);
 editFormValidation.enableValidation();
 //подключим валидацию добавления фото, создаем новый экземпляр класса FromValidator
-const addFormValidation = new FormValidator(enableValidation, formElementPlace);
+const addFormValidation = new FormValidator(validationConfig, formElementPlace);
 addFormValidation.enableValidation();

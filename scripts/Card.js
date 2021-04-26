@@ -1,6 +1,4 @@
-import { openPopup } from './index.js'
-// import {openPopup} from './index.js'
-const cardsImage = document.querySelector(".card__img");
+import { openPopup } from './utils.js'
 export default class Card {
   constructor(data, cardSelector) {
     this._image = data.link;
@@ -20,9 +18,10 @@ export default class Card {
     this._setEventListeners();
     this._setCardLikeListener();
     this._setDeleteCardListener();
-    this._element.querySelector('.card__img').src = this._image;
+    const cardImage = this._element.querySelector('.card__img');
     this._element.querySelector('.card__title').textContent = this._title;
-    this._element.querySelector('.card__img').alt = this._title;
+    cardImage.src = this._image;
+    cardImage.alt = this._title;
     return this._element;
   }
   _handleOpenPopup() { //-- наполнение попапа - просмотр изображения

@@ -4,14 +4,14 @@ const nameTitle = document.querySelector(".profile__title");
 const nameJob = document.querySelector(".profile__subtitle");
 const nameInput = document.querySelector(".popup__input_user-name");
 const jobInput = document.querySelector(".popup__input_user-profession");
-const editProfileForm = document.querySelector(".popup__forms");
-
+const editProfileForm = popupEditProfile.querySelector(".popup__forms");
+//console.log(editProfileForm)
 const popupPlace = document.querySelector(".popup_new-place"); //-- переменная попапа Добавить место
 const formElementPlace = popupPlace.querySelector(".popup__forms");
 const popupInputName = popupPlace.querySelector(".popup__input_card-name"); //--инпуты попап новое место
 const popupInputLink = popupPlace.querySelector(".popup__input_card-link"); //--инпуты попап новое место
+//console.log(formElementPlace)
 
-//const card = document.querySelector("#popup-place").content; //--переменная содержимое Template
 const profile = document.querySelector(".elements");
 const pageFull = document.querySelector(".popup_image");
 const imgScreenFull = pageFull.querySelector(".card-open__screen");

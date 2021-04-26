@@ -59,9 +59,7 @@ _toggleButtonState = (buttonElement) => {
   }
 }
 _setEventListeners = () => {
-    
     this._toggleButtonState(this._inputList, this._submitButton);
-
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", (evt) => {
         this._isValid(inputElement);
@@ -70,11 +68,7 @@ _setEventListeners = () => {
     });
   };
   //----------------------------------
-enableValidation = () => {
-    // Функция принимает массив полей
-    const formList = Array.from(document.querySelectorAll(this._formSelector));
-    formList.forEach (() => {
-      this._setEventListeners();
-    });
+enableValidation = (evnt) => {
+  this._setEventListeners();
   };
 };
