@@ -4,9 +4,10 @@
   "description": "*[ссылка на готовый проект](https://mamasha59.github.io/mesto/)\r ### Обзор\r Проектная работа посвященная изучению **JavaScript.**\r В проекте используется различные окна попап(Редактирование профиля, Загрузка новых картинов через ссылку, и Окно просмотра изображение), Кнопка Лайк, **Popup** реализованно с помощью JS",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "rm -rf dist && webpack --mode production",
-    "dev": "webpack serve",
-    "deploy": "gh-pages -d dist"
+    "dev": "webpack serve"
   },
   "repository": {
     "type": "git",
