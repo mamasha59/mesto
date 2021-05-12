@@ -1,13 +1,9 @@
-import { openPopup } from './utils.js'
 export default class Card {
-  constructor(data, cardSelector) {
+  constructor(data, handleCardClick,cardSelector) {
     this._image = data.link;
     this._title = data.name;
     this._cardSelector = cardSelector;
-    this._openPopup = () => { //---- открытие попапа - просмотр изображения
-      openPopup(pageFull) //--- сама функция открытие попапа изображения
-      this._handleOpenPopup();  
-    }
+    this._handleCardClick = handleCardClick;
   }
   _getTemplate() { //--шаблон карточки
     const cardElement = document.querySelector(this._cardSelector).content.querySelector('.card').cloneNode(true);
@@ -24,19 +20,13 @@ export default class Card {
     cardImage.alt = this._title;
     return this._element;
   }
-  _handleOpenPopup() { //-- наполнение попапа - просмотр изображения
-    imgScreenFull.src = this._image;
-    imgScreenFullName.textContent = this._title;
-    imgScreenFull.alt = this._title;
-  }
   _setEventListeners() { //---- слушатель и открытие попапа кликом на изображение
-    this._element.querySelector('.card__img').addEventListener('click', () => {
-      this._openPopup() // откройте попап
-    });
+    this._element.querySelector('.card__img')
+    .addEventListener('click', () => this._handleCardClick(this._title,this._image));
   }
   _setCardLikeListener() {
-    //----лайк кнопка
-    const cardLikeButtom = this._element.querySelector(".card__like-button")
+   // ----лайк кнопка
+  const cardLikeButtom = this._element.querySelector(".card__like-button")
       .addEventListener("click", function (evt) {
         evt.target.classList.toggle("card__like-button_active");
       });
