@@ -8,7 +8,7 @@ import UserInfo from '../components/UserInfo.js'
 import {
     nameJob, nameTitle, popupEditProfile, popupPlace, pageFull, initialCards, profile,
     createButton, buttonCreateCard, editProfileForm, formElementPlace, nameInput,
-    jobInput, popupInputName, popupInputLink,validationConfig
+    jobInput, popupInputName, popupInputLink, validationConfig
 } from '../utils/constns.js'
 //---------------------------------------------/----------------------------//---------------
 const userInfo = new UserInfo(nameTitle, nameJob);//---данные инпутов РЕДАКТИРОАНИЯ ПОЛЬЗОВАТЕЛЯ
@@ -25,7 +25,7 @@ const popupEdit = new PopupWithForm(popupEditProfile,//----форма редак
 popupEdit.setEventListeners();
 //------  
 const popupAdd = new PopupWithForm(popupPlace, {//--- форма добавление карточки
-    submitForm: (data) => {
+    submitForm: () => {
         const cardElement = createCard({
             name: popupInputName.value,
             link: popupInputLink.value,
@@ -45,7 +45,7 @@ const editButtonHandler = () => { //---- ДАННЫЕ ПОЛЬЗОВАТЕЛЯ �
 };
 //--------------------------------------------------------//-----------------/
 const popupImage = new PopupWithImage(pageFull);
-function handleCardClick(name, link) { //--- ФУНКЦИЯ ОТКРТИЕ ПРОСМОТРА ИЗОБРАЖЕНИЯ
+function handleCardClick(name, link) { //--- ФУНКЦИЯ ОТКРыТИЕ ПРОСМОТРА ИЗОБРАЖЕНИЯ
     popupImage.open(name, link)
 }
 popupImage.setEventListeners();

@@ -14,8 +14,8 @@ const popupInputLink = popupPlace.querySelector(".popup__input_card-link"); //--
 const profile = document.querySelector(".elements");
 
 const pageFull = document.querySelector(".popup_image");
-const imgScreenFull = pageFull.querySelector(".card-open__screen");
-const imgScreenFullName = pageFull.querySelector(".card-open__name");
+const imgScreenFull = pageFull.querySelector(".card-open__screen"); //--- img 
+const imgScreenFullName = pageFull.querySelector(".card-open__name");//--- figcaption
 
 const createButton = document.querySelector(".profile__link");
 const buttonCreateCard = document.querySelector(".profile__add");

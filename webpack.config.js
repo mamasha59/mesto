@@ -15,9 +15,10 @@ module.exports = {
   mode: 'development',
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),
-    open: true,
-    compress: true,
-    port: 8080
+    compress: true, //---это ускорит загрузку в режиме разработки
+    port: 8090, //---порт, чтобы открывать сайт по адресу localhost:8080, но можно поменять порт
+    open: true, //--сайт будет открываться сам при запуске npm run dev
+
   },
   module: {
     rules: [{

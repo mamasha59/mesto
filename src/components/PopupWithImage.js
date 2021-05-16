@@ -8,7 +8,8 @@ export default class PopupWithImage extends Popup {
   open(name, link) {
     imgScreenFull.src = link;
     imgScreenFullName.textContent = name;
-    imgScreenFullName.alt = name;
+    imgScreenFull.alt = name;
     super.open()
+    console.log(imgScreenFullName.alt)
   }
 }
