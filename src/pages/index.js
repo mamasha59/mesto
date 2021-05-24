@@ -150,7 +150,7 @@ const createCard = (item) => {         // СОЗДАНИЕ КАРТОЧКИ
         item, 
         {
             handleCardClick,
-            popupDelete: (cardId) => { //---пока что не работает
+            popupDelete: (cardId) => {
                 popupDelete.open(cardId);
             },
             likeToggle: (cardId) => {
