@@ -8,6 +8,7 @@
     border: none;
     cursor: pointer;
     outline: none;
+    visibility: hidden;
 }
 .card__deleate:hover{
     opacity: 0.6;

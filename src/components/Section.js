@@ -5,11 +5,8 @@ export default class Section {
         this._container = containerSelector;
     }
     //перебор массив данных
-    renderItems() {
-        // this.clear();
-        this._renderedItems.forEach(item => {
-            this._renderer(item);
-        });
+    renderItems(data) {
+        data.forEach(item => {this._renderer(item)});
     }
     //вставка элемента в контейнер
     addItem(element) {

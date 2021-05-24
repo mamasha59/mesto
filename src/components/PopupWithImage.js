@@ -10,6 +10,5 @@ export default class PopupWithImage extends Popup {
     imgScreenFullName.textContent = name;
     imgScreenFull.alt = name;
     super.open()
-    console.log(imgScreenFullName.alt)
   }
 }

@@ -20,41 +20,18 @@ const imgScreenFullName = pageFull.querySelector(".card-open__name");//--- figca
 const createButton = document.querySelector(".profile__link");
 const buttonCreateCard = document.querySelector(".profile__add");
 
+const deleatePopup = document.querySelector('.popup_deleate-place');//---попап удаление
+
+const avatarImg = document.querySelector('.profile__img');
+
+const popupEditAvatar = document.querySelector('.popup_edit-avatar');
+const buttonEditAvatar = document.querySelector('.profile__edit-button');
+const inputPopupAvatar = popupEditAvatar.querySelector('.popup__input_avatar-link');
+const saveButtonAvatar = popupEditAvatar.querySelector('.popup__button');
+const avatarEditForm =  popupEditAvatar.querySelector('.popup__forms')
 const escape = 'Escape';
 
 //-----------------------------------\\
-const initialCards = [
-    {
-      name: "Вулкан",
-      link:
-        "https://images.unsplash.com/photo-1616628950295-d3288bd7a96d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-    },
-    {
-      name: "Челябинская область",
-      link:
-        "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-    },
-    {
-      name: "Иваново",
-      link:
-        "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-    },
-    {
-      name: "Камчатка",
-      link:
-        "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-    },
-    {
-      name: "Байкал",
-      link:
-        "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-    },
-    {
-      name: "Холмогорский район",
-      link:
-        "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-    },
-  ];
   const validationConfig = {
     formSelector: ".popup__forms",
     inputSelector: ".popup__input",
@@ -69,7 +46,6 @@ const initialCards = [
     popupEditProfile,
     popupPlace,
     pageFull,
-    initialCards,
     profile,
     imgScreenFull,
     createButton,
@@ -83,4 +59,11 @@ const initialCards = [
     popupInputName,
     popupInputLink,
     validationConfig,
+    deleatePopup,
+    avatarImg,
+    buttonEditAvatar,
+    popupEditAvatar,
+    inputPopupAvatar,
+    saveButtonAvatar,
+    avatarEditForm,
   }
