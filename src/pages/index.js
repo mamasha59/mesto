@@ -27,12 +27,10 @@ Promise.all([api.getUserInfo(), api.getCards()])
         userInfo.setUserInfo(uerInfo.name, uerInfo.about, uerInfo._id);
         userInfo.setUserAvatar(uerInfo.avatar);
         renderCard.renderItems(cardList);
-        //hideApiError();
         return renderCard;
     })
     .catch((err) => {     //попадаем сюда если один из промисов завершится ошибкой
         console.log(`Загрузкка данных... Ошибка: ${err}`);
-        //showApiError('Загрузкка данных... Ошибка');
     });
 //------------------//---------------------------------------------------
 
@@ -51,7 +49,6 @@ const popupAvatarUpdate = new PopupWithForm(popupEditAvatar, //-----форма �
                 })
                 .catch(err => {
                     console.log(`Сохранение аватара... Ошибка: ${err}`);
-                    //showApiError('Сохранение аватара... Ошибка');
                 })
                 .finally(() => {
                     button.textContent = 'Сохранить';
@@ -70,12 +67,10 @@ const popupEdit = new PopupWithForm(popupEditProfile,//----форма редак
             api.setUserInfo(data.name, data.about)
                 .then(result => {
                     userInfo.setUserInfo(result.name, result.about);
-                    //hideApiError();
                     popupEdit.close();//---закрытие попапа
                 })
                 .catch(err => {
                     console.log(`Сохранение данных пользователя... Ошибка: ${err}`);
-                   // showApiError('Сохранение данных пользователя... Ошибка');
                 })
                 .finally(() => {
                     button.textContent = 'Сохранить';
@@ -97,7 +92,6 @@ const popupAdd = new PopupWithForm(popupPlace, {//--- форма добавле�
             })
             .catch(err => {
                 console.log(`Сохранение новой карточки...... Ошибка: ${err}`);
-                //showApiError('Сохранение аватара... Ошибка');
             })
             .finally(() => {
                 button.textContent = 'Создать';
