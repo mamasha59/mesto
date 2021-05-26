@@ -5,22 +5,26 @@
 .card__img{border-radius:10px 10px 0 0;cursor:pointer;display:block;height:282px;-o-object-fit:cover;object-fit:cover;width:100%}
 .card__interactive{background-color:#fff;border-radius:0 0 10px 10px;display:flex;justify-content:space-between;margin:-3px 0 0;padding:29px 20px 25px 21px}
 .card__title{font-size:24px;font-weight:900;line-height:29px;margin:0;max-width:80%;overflow:hidden;padding:0;text-overflow:ellipsis;white-space:nowrap}
-.card__like-button{background:url(87ed371465c7a6a1cd01.svg) no-repeat;border:none;cursor:pointer;height:19px;margin-top:7px;outline:none;padding:0;width:22px}.card__like-button:hover{opacity:.5}
+.card__like-button{background:url(87ed371465c7a6a1cd01.svg) no-repeat;border:none;cursor:pointer;height:19px;margin-top:0;outline:none;padding:0;width:22px}.card__like-button:hover{opacity:.5}
 .card__like-button_active{background:url(fe17a515669479b1e649.svg) no-repeat;height:19px;width:22px}
-.card__deleate{background:url(cbc09a894bdd4c956365.svg) no-repeat;border:none;cursor:pointer;height:19px;outline:none;position:absolute;right:15px;top:18px;width:18px}.card__deleate:hover{opacity:.6}
+.card__deleate{background:url(cbc09a894bdd4c956365.svg) no-repeat;border:none;cursor:pointer;height:19px;outline:none;position:absolute;right:15px;top:18px;visibility:hidden;width:18px}.card__deleate:hover{opacity:.6}
+.card__box-like{margin:0;padding:0;text-align:center}
+.card__delete_style_active{visibility:visible}
+.card__like-counter{font-size:13px;font-weight:400;line-height:16px}
 .elements{-moz-column-gap:17px;column-gap:17px;display:grid;grid-template-columns:repeat(3,282px);margin:0 auto;max-width:880px;row-gap:20px}@media screen and (max-width:1023px){.elements{-moz-column-gap:0;column-gap:0;grid-template-columns:repeat(2,1fr);padding:0 19px}}@media screen and (max-width:767px){.elements{grid-template-columns:1fr}}
 .header{margin:0 auto;max-width:880px}.header:after{border-bottom:1px solid rgba(84,84,84,.7);content:"";display:flex;margin-top:40px;width:100%}@media screen and (max-width:1277px){.header{padding:0 19px}}@media screen and (max-width:767px){.header{padding:0}}
 .header__logo{background:url(03b78ada3425e9132ff3.svg) no-repeat;height:33px;margin:45px 0 0;width:142px}@media screen and (max-width:767px){.header__logo{background-size:contain;height:24px;margin:28px 0 31px 27px;width:103px}}
 .page{font-family:Inter,Arial,sans-serif;margin:0 auto;max-width:1280px;min-width:320px}
 .profile__block{align-items:center;display:flex;justify-content:space-between}@media screen and (max-width:767px){.profile__block{flex-direction:column}}
-.profile__img{border-radius:100%;margin:0 30px 0 0;max-height:120px}@media screen and (max-width:767px){.profile__img{margin:0}}
+.profile__img{border-radius:100%;max-height:120px;width:100%}
 .profile__link{background:url(a1892ea72cb87c8fc3aa.svg) no-repeat;border:none;cursor:pointer;height:24px;margin:16px 0 0 20px;outline:none;padding:0;width:24px}.profile__link:hover{opacity:.6}@media screen and (max-width:767px){.profile__link{background:url(2f7be95ab48bbff7d88c.svg) no-repeat;height:18px;margin:30px 0 0 10px;width:18px}}
 .profile__subtitle{font-size:18px;font-weight:400;line-height:22px;margin:0;max-width:336px;overflow:hidden;padding:0;text-overflow:ellipsis;white-space:nowrap}@media screen and (max-width:767px){.profile__subtitle{font-size:14px;line-height:17px;margin-bottom:36px;max-width:282px;text-align:center}}
-.profile__text{display:flex;flex-direction:column}
+.profile__text{display:flex;flex-direction:column}@media screen and (max-width:769px){.profile__text{align-items:center}}
 .profile__title-button{display:flex;margin:0;padding:0}
 .profile__title{font-size:42px;font-weight:500;line-height:48px;margin:0 0 10px;max-width:294px;overflow:hidden;padding:0;text-overflow:ellipsis;white-space:nowrap}@media screen and (max-width:767px){.profile__title{font-size:27px;line-height:33px;margin:22px 0 14px;max-width:189px}}
 .profile{align-items:center;color:#fff;display:flex;justify-content:space-between;margin:0 auto;max-width:880px;padding:36px 0 47px}@media screen and (max-width:1277px){.profile{padding:36px 19px 47px}}@media screen and (max-width:767px){.profile{flex-direction:column}}
 .profile__add{background-size:contain;background:url(6f41966c71dd7895857f.svg) no-repeat;border:none;cursor:pointer;height:50px;margin:0;outline:none;padding:13px 0;width:150px}.profile__add:hover{opacity:.6}@media screen and (max-width:767px){.profile__add{background:url(6f86ece55e54220c5485.svg) no-repeat;width:282px}}
+.profile__edit-button{background-color:#000;border:none;border-radius:50%;height:120px;margin:0 30px 0 0;outline:none;padding:0;position:relative;width:120px}.profile__edit-button:before{background-color:rgba(0,0,0,.8);background-image:url(a086f758840ae814ecde.svg);background-position:50%;background-repeat:no-repeat;border:none;bottom:0;content:"";left:0;opacity:0;position:absolute;right:0;top:0;transition:opacity .2s linear}.profile__edit-button:hover:before{cursor:pointer;opacity:1}@media screen and (max-width:767px){.profile__edit-button{margin:0}}
 .footer__copyrigth{color:#545454;font-size:18px;font-weight:400;line-height:22px;margin:67px 0 60px}@media screen and (max-width:1277px){.footer__copyrigth{padding:0}}@media screen and (max-width:1023px){.footer__copyrigth{padding:0 19px}}@media screen and (max-width:767px){.footer__copyrigth{font-size:14px;line-height:17px}}
 .footer{margin:0 auto;max-width:880px}
 .popup{align-items:center;background-color:rgba(0,0,0,.5);display:flex;height:100%;justify-content:center;left:0;opacity:0;position:fixed;top:0;transition:visibility .5s,opacity .5s linear 0s;visibility:hidden;width:100%}
@@ -41,6 +45,7 @@
 .popup__input{width:100%}
 .popup__section{margin:0 0 40px;position:relative}
 .popup__error_border{border-bottom:1px solid red}
+.popup__input_avatar-link{border:none;border-bottom:1px solid rgba(0,0,0,.2);font-size:14px;line-height:17px;margin:0;outline:none;padding:0 0 13px}
 .card-open__name{color:#fff;font-size:12px;font-weight:400;line-height:15px;max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .card-open__screen{max-height:75vh;max-width:75vw}
 .card-open{position:relative}
