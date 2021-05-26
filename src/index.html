@@ -63,13 +63,13 @@
                 <form method="POST" name="popup-place" id="reset" class="popup__forms" novalidate>
 
                     <div class="popup__section">
-                        <input name="name-place" id="popup__title" class="popup__input popup__input_card-name"
+                        <input name="place" id="popup__title" class="popup__input popup__input_card-name"
                             type="text" placeholder="Название" required maxlength="30" minlength="2">
                         <span class="popup__error popup__title-error"></span>
                     </div>
 
                     <div class="popup__section">
-                        <input name="link-place" id="popup__link" class="popup__input popup__input_card-link" type="url"
+                        <input name="source" id="popup__link" class="popup__input popup__input_card-link" type="url"
                             placeholder="Ссылка на картинку" required>
                         <span class="popup__error popup__link-error"></span>
                     </div>
@@ -93,9 +93,9 @@
                 <h3 class="popup__title">Обновить аватар</h3>
                 <button aria-label="закрыть" type="button" class="popup__close">
                 </button>
-                <form method="POST" name="popup-avatar" class="popup__forms" novalidate>
+                <form name="updAvatar" class="popup__forms" novalidate>
                     <div class="popup__section">
-                        <input name="link-avatar" id="popup__avatar" class="popup__input popup__input_avatar-link"
+                        <input name="avatar" id="popup__avatar" class="popup__input popup__input_avatar-link"
                             type="URL" placeholder="Cсылка" required>
                         <span class="popup__error popup__avatar-error"></span>
                     </div>

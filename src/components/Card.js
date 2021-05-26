@@ -17,6 +17,7 @@ export default class Card {
     this._likeToggle = likeToggle;
     this._userId = userId;//---пользователя айди
     this._ownerId = owner._id;//--- мой айди
+    this._cardLikeActive = 'card__like-button_active';
   }
   _getTemplate() { //--шаблон карточки
     const cardElement = document.querySelector(this._cardSelector).content.querySelector('.card').cloneNode(true);
@@ -26,7 +27,6 @@ export default class Card {
     this._openPopupDelete(this._element);
   }
   _handleLikeCard() {
-    this._cardLike.classList.toggle('card__like-button_active');
     this._likeToggle(this._element);
   }
   setLikesInfo(likes) {
@@ -43,7 +43,11 @@ export default class Card {
   }
   _updateLikes() {
     this._likeCounter.textContent = this._likes.length;
-
+    if (this.isLiked()) {
+      this._cardLike.classList.add(this._cardLikeActive);
+  } else {
+      this._cardLike.classList.remove(this._cardLikeActive);
+  }
   }
   generateCard() {  //--- возвращение полноценной рабочей карточки со слушетялми и наполнением
     this._setEventListeners();

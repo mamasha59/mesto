@@ -1,4 +1,5 @@
 import {escape} from '../utils/constns.js'
+
 export default class Popup {
     constructor(popupElement) {
         this._popup = popupElement;
@@ -16,9 +17,8 @@ export default class Popup {
     }
     _handleEscClose(evt) {
         //-----закрытие по ESC
-        const activePopUp = document.querySelector('.popup_opened');
         if (evt.key === escape) {
-            this.close(activePopUp);
+            this.close();
         }
     }
     setEventListeners() {

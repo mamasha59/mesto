@@ -34,15 +34,15 @@ Promise.all([api.getUserInfo(), api.getCards()])
     });
 //------------------//---------------------------------------------------
 
-const userInfo = new UserInfo(nameTitle, nameJob, avatarImg);//---данные инпутов РЕДАКТИРОАНИЯ ПОЛЬЗОВАТЕЛЯ
+const userInfo = new UserInfo(avatarImg,nameTitle, nameJob);//---данные инпутов РЕДАКТИРОАНИЯ ПОЛЬЗОВАТЕЛЯ
 
 //---- ПОПАПЫ
 const popupAvatarUpdate = new PopupWithForm(popupEditAvatar, //-----форма редактированя аватара пользователя
     {
-        submitForm: () => {
+        submitForm: (data) => {
             const button = popupEditAvatar.querySelector('.popup__button');
             button.textContent =  'Сохранение...';
-            api.updAvatar(inputPopupAvatar.value)
+            api.updAvatar(data.avatar)
                 .then(result => {
                     userInfo.setUserAvatar(result.avatar);
                     popupAvatarUpdate.close()
@@ -81,10 +81,10 @@ const popupEdit = new PopupWithForm(popupEditProfile,//----форма редак
 popupEdit.setEventListeners();
 //------  
 const popupAdd = new PopupWithForm(popupPlace, {//--- форма добавление карточки
-    submitForm: () => {
+    submitForm: (data) => {
         const button = popupPlace.querySelector('.popup__button');
         button.textContent =  'Сохранение...';
-        api.postCards(popupInputName.value, popupInputLink.value)
+        api.postCards(data.place, data.source)
             .then((result) => {
                 const cardElement = createCard(result);
                 renderCard.addItem(cardElement, 'prepend');
