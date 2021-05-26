@@ -4,6 +4,7 @@
   "description": "*[ссылка на готовый проект](https://mamasha59.github.io/mesto/)\r ### Обзор\r Проектная работа посвященная изучению **JavaScript.**\r В проекте используется различные окна попап(Редактирование профиля, Загрузка новых картинов через ссылку, и Окно просмотра изображение), Кнопка Лайк, **Popup** реализованно с помощью JS",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "rm -rf dist && webpack --mode production",
     "dev": "webpack serve"
@@ -26,7 +27,7 @@
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.4",
     "cssnano": "^5.0.2",
-    "gh-pages": "^3.1.0",
+    "gh-pages": "^3.2.0",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
     "postcss-loader": "^5.2.0",
@@ -36,6 +37,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+     "gh-pages": "^3.1.0",
     "core-js": "^3.12.1"
   }
 }
